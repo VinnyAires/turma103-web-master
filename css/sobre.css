@@ -164,19 +164,12 @@ label {
     text-align: center;
     width: 200px;
 }
-
-.team-cards img {
-    border-radius: 10px;
-    width: 50px;
-    height: 50px; 
+#sobrenos{
+    margin: 0 auto;
 }
-
-.card h4 {
-    margin: 10px 0 5px 0;
-}
-
-.card p {
-    color: #666;
+#foto-turma{
+    max-width: 1000px;
+    border-radius: 15px;
 }
 
 
