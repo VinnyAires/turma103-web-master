@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato para mais informações sobre nossos serviços.">
+    <link rel="stylesheet" href="/css contato/style.css">
+    <title>Webmaster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="/img inicio/1.png" alt="Logo do Webmaster"></a>
+        <ul class="navmenu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="templates.html">Templates</a></li>
+            <li>
+                <a href="#" aria-haspopup="true" aria-expanded="false">Outros</a>
+                <ul class="dropdown">
+                    <li><a href="servico.html">Serviços</a></li>
+                    <li><a href="orcamento.html">Orçamento</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contatos</a></li>
+                </ul>
+            </li>
+        </ul>
+        <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </header>
+
+    <section id="contato">
+        <div class="centro-texto">
+            <h2>Conta<span>to</span></h2>
+        </div>
+        <p>Queremos garantir que a comunicação seja feita da maneira que for mais conveniente para você. Por isso, pedimos que nos informe sua preferência de contato: se você prefere ser contatado por ligação telefônica, e-mail ou WhatsApp.</p>
+        <p>Utilize o campo "Mensagem" para incluir informações adicionais que possam nos ajudar a oferecer o melhor atendimento possível. Estamos ansiosos para ouvir de você!</p>
+        <form id="form-contato">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="telefone">Whatsapp:</label>
+            <input type="text" id="telefone" name="telefone" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script src="java.js"></script>
+</body>
+</html>

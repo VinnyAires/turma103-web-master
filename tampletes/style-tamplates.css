@@ -1,0 +1,683 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Jost", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+.container {
+    display: grid;
+    grid-template-columns: 25vh 1fr 1fr 1fr;
+    grid-template-areas:
+      'h h n n'
+      'i i i i'
+      'a m m m'
+      'f f f f' ;
+    overflow-x: hidden;
+  }
+header{
+    grid-area: h;
+    display: flex;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    right: 0;
+    align-items: center;
+    padding: 1rem ;
+}
+    /*------------------NAV__MENU-----------------*/
+.logo{
+    display: flex;
+
+}
+.logo img{
+    max-width: 18.75rem;
+    height: auto;
+    
+}
+.favicon-logo>a>img{
+    display: none;
+    max-width: 6rem;
+    height: auto;
+}
+nav {
+    display: grid;
+    grid-area: n;
+    width: 100%;
+    position: relative;
+    background-color: white;
+    padding: 2.3rem 1rem;
+    justify-items: start;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-item {
+    position: relative;
+
+}
+button{
+    background-color: none;
+    display: none;
+    border: none;
+}
+.hamburguer{
+    display: none;
+    border: none;
+    background-color: none;
+    border-top: 3px solid black;
+    cursor: pointer;
+    z-index: 6;
+}
+
+.hamburguer::before,
+.hamburguer::after{
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background-color: #000;
+    margin-top: 0.225rem;
+
+}
+.side-menu{
+    display: none;
+    position: fixed;
+    background-color: rgb(236, 236, 236);
+    color: #000;
+    transition: 1s ease-in-out;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    z-index: 1;
+}
+.side-sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Centraliza horizontalmente em relação ao item pai */
+    transform: translateX(-50%); /* Ajusta para que o submenu fique exatamente no centro */
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0rem 0.25rem 0.5rem (0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    z-index: 5;
+    width: 20rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 1rem; /* Espaçamento entre as colunas */
+}
+.side-menu-item>a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    display: flex;
+    white-space: nowrap;
+}
+.side-menu-item::after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    bottom: 0; /* Alinha a borda na parte inferior */
+    left: 0;
+    width: 100%; /* Preenche a largura do link */
+    height: 0.125rem; /* Altura da borda */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1); /* Cor da borda */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Ao passar o mouse, anima o pseudo-elemento */
+.side-menu-item:hover::after {
+    visibility: visible;
+    transform: translateX(0); /* Move a borda para a posição */
+}
+
+.side-menu-item a:hover {
+    background-color: rgba(0, 0, 0, 0.055); /* Fundo semi-transparente */
+    /* Remova a borda aqui, pois agora a animação é do pseudo-elemento */
+}
+.side-menu-item:hover  .side-sub-menu {
+    display: grid;
+    opacity: 1;
+    transform: translate(-50%, 0); /* Efeito de subida suave e centralização */
+}
+
+/* Itens do submenu */
+.side-sub-menu-items {
+    margin-bottom: 1em;
+}
+
+.side-sub-menu-items a {
+    color: #555;
+    font-weight: bold;
+    padding: 0.5em 0;
+    display: flex;
+    text-decoration: none;
+}
+
+.side-sub-menu-items a:hover {
+    background-color: #f4f4f4;
+}
+
+/* Estilo para garantir que cada item tenha o espaçamento adequado */
+.side-sub-menu-items:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.menu-item>a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    display: flex;
+    white-space: nowrap;
+}
+.menu-item::after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    bottom: 0; /* Alinha a borda na parte inferior */
+    left: 0;
+    width: 100%; /* Preenche a largura do link */
+    height: 0.125rem; /* Altura da borda */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1); /* Cor da borda */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Ao passar o mouse, anima o pseudo-elemento */
+.menu-item:hover::after {
+    visibility: visible;
+    transform: translateX(0); /* Move a borda para a posição */
+}
+
+.menu-item a:hover {
+    background-color: rgba(0, 0, 0, 0.055); /* Fundo semi-transparente */
+    /* Remova a borda aqui, pois agora a animação é do pseudo-elemento */
+}
+
+
+/* Submenu flutuante */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Centraliza horizontalmente em relação ao item pai */
+    transform: translateX(-50%); /* Ajusta para que o submenu fique exatamente no centro */
+    background-color: white;
+    padding: 1.5rem;
+    display: none;
+    box-shadow: 0rem 0.25rem 0.5rem (0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    z-index: 2;
+    width: 20rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 1rem; /* Espaçamento entre as colunas */
+}
+
+/* Animação ao passar o mouse */
+.menu-item:hover .sub-menu {
+    display: grid;
+    opacity: 1;
+    transform: translate(-50%, 0); /* Efeito de subida suave e centralização */
+}
+
+/* Itens do submenu */
+.sub-menu-items {
+    margin-bottom: 1em;
+}
+
+.sub-menu-items a {
+    color: #555;
+    font-weight: bold;
+    padding: 0.5em 0;
+    display: flex;
+    text-decoration: none;
+}
+
+.sub-menu-items a:hover {
+    background-color: #f4f4f4;
+}
+
+.sub-text {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/* Estilo para garantir que cada item tenha o espaçamento adequado */
+.sub-menu-items:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+/* Efeito de texto pequeno */
+.sub-text {
+    font-size: 0.875em;
+    line-height: 1.4;
+    color: #555;
+}
+
+/*------------------_MAIN_-----------------*/
+
+section{
+    padding: 5% 10%;
+}
+.inicio{
+    width: 100%;
+    height: 100vh;
+    background: image-set('./imgs/10.png');
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+}
+
+.sticky-header {
+    position: fixed;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+    width: 100%;
+    z-index: 2;
+}
+
+.sticky-aside {
+    position: fixed;
+    top: 10rem; 
+    max-width: 18.75rem;
+    z-index: 2;
+}
+.sticky-nav{
+    position: fixed;
+    background-color: transparent;
+    width: 50%;
+    left: 50%;
+    transform: translate(-55.7%);
+    justify-items: center;
+    z-index: 1;
+}
+/*------------------TEMPLATE-----------------*/
+
+.inicio-temp{
+    grid-area: i;
+    align-items: center;
+}
+.texto-temp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.5rem;
+}
+.texto-temp h2{
+    color: rgb(248, 94, 94);
+    font-size: 3.5rem;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+
+}
+.texto-temp>p{
+    font-weight: 600;
+}
+.texto-temp h2:hover{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transform: scale(1.02);
+}
+.tamplates-page {
+    display: grid;
+    grid-area: m;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    width: 100%;
+    border-left: #999999 solid 2px;
+    gap: 2rem; /* Espaçamento entre os itens */
+    padding: 2rem; /* Adiciona espaçamento interno */
+}
+/*------------------ASIDE-----------------*/
+aside{
+    display: grid;
+    grid-area: a;
+    position: relative;
+    top: 1rem; 
+    padding: 0.625rem; 
+}
+.tamplates-aside.sticky{
+    display: grid;
+    grid-area: a;
+    position: fixed;
+}
+/*------------------ASIDE_DROP-----------------*/
+.aside-dropdown{
+    display: none;
+}
+.categorias-drop {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+}
+#dropdown-title{
+    display: flex;
+    text-align: center;
+}
+.categorias-drop h2 {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.opcao-drop {
+    display: none; /* Esconde as categorias inicialmente */
+    margin: 5px 0;
+}
+
+.opcao-drop a {
+    display: flex;
+    text-align: center;
+    justify-content: baseline;
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+}
+.opcao-drop a:hover{
+    color: rgb(248, 94, 94);
+    transform: scale(1.01);
+}
+
+.categorias-drop.open .opcao-drop {
+    display: block; /* Mostra as categorias quando estiver aberto */
+}
+.categorias-drop.open #seta-right{
+    transform: translateX(10px) rotate(45deg);
+}
+
+/*.seta{
+    display: block;
+    width: 0.725rem;
+    height: 0.125rem;
+    margin-top: 20px;
+    background-color: #333;
+    transition: 0.4s;
+}
+#seta-rigth{
+    transform:translateX(5px) rotate(45deg);
+}
+#seta-left{
+    transform: rotate(-45deg);
+}
+
+/* Criando as outras duas linhas da seta */
+.seta::before,
+.seta::after {
+    content: '';
+    position: absolute;
+    width: 0.675rem;
+    height: 0.125rem;
+    margin-top: 1.25rem;
+    margin-left: 0.325rem;
+    background-color: #333;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Configuração inicial para a seta para baixo */
+.seta::before {
+    transform: translateX(-1px) rotate(45deg);
+}
+
+.seta::after {
+    transform: translateX(6px) rotate(-45deg);
+}
+
+/* Quando o dropdown está aberto, formamos o 'X' */
+.categorias-drop.open .seta {
+    transform: rotate(45deg);
+}
+
+.categorias-drop.open .seta::before {
+    transform: translateX(6px) rotate(45deg);
+}
+
+.categorias-drop.open .seta::after {
+    transform: translateX(6x) rotate(-45deg);
+}
+/*------------------NAV_TAMPLATE-----------------*/
+.nav-temp{
+    display: flex;
+    flex-direction: column;
+}
+
+.src-temp {
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+}
+
+.src-temp h2{
+    color: rgb(49, 49, 49);
+    font-size: 28px;
+    text-align: right;
+    padding: 0.3rem;
+
+}
+.categorias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    font-weight: 400;
+}
+.categoria-nav{
+    display: flex;
+}
+.categoria-nav>a{
+    display: flex;
+    color: black;
+    padding:0.3rem;
+    transition: transform 0.3s ease;
+
+}
+.categoria-nav a:hover{
+    color: rgb(248, 94, 94);
+    transform: scale(1.01);
+}
+
+
+.btn-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-75%, -50%);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+/*
+.tamplate {
+    display: grid;
+    gap: 2rem; /* Espaçamento entre os itens 
+}
+.tamplate>a>img{
+    width: 400px;
+    -webkit-filter: opacity(100%);
+    box-shadow: 0px 2px 4px 10px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+
+}
+.tamplate>img:hover {
+    cursor: pointer;
+    -webkit-filter: opacity(50%);
+    transform: scale(1.02);
+}
+.tamplate :hover + .btn-link{
+    cursor: pointer;
+    opacity: 1;
+}
+*/
+.tamplate {
+    position: relative; /* Adiciona posicionamento relativo ao container */
+    display: grid;
+    gap: 2rem;
+    justify-items: center;
+}
+
+.tamplate>img {
+    width: 400px;
+    height: 200px;
+    -webkit-filter: opacity(100%);
+    box-shadow: 0px 2px 4px 10px rgb(0 0 0 / 5%);
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Adiciona transição suave ao hover */
+}
+
+.btn-link {
+    position: absolute;
+    opacity: 0; /* Inicialmente invisível */
+    text-align: center;
+    left: 50%; /* Centraliza horizontalmente */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centralizar completamente */
+    width: 6.5rem;
+    height: 2rem;
+    padding: 0.3rem 1rem;
+    background-color: rgb(209, 209, 211);
+    border-radius: 3px;
+    transition: opacity 0.3s ease-in-out; /* Suaviza a transição de visibilidade */
+    z-index: 1; /* Garante que o botão apareça sobre a imagem */
+}
+
+.tamplate:hover img {
+    opacity: 0.5; /* Reduz a opacidade da imagem no hover */
+    transform: scale(1.02); /* Aumenta levemente a imagem */
+}
+
+.tamplate:hover .btn-link {
+    opacity: 1; /* Torna o botão visível ao passar o mouse */
+}
+
+
+/*------------------FOOTER-----------------*/
+footer{
+    grid-area: f;
+    padding: 1.25rem; /* 20px = 1.25rem */
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/*------------------RESPONSIVIDADE-----------------*/
+@media screen and (max-width: 768px) {
+    header{
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+        height: 5rem;
+    }
+    #favicon-logo>img{
+        width: 100%;
+        height: 5rem;
+    }
+    .logo{
+        display: none;
+    }
+    .favicon-logo>a>img{
+        display: flex;
+    }
+    .hamburguer{
+        display: block;
+        z-index: 1;
+    }
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        'h h'
+        'i i'
+        'a a'
+        'm m'
+        'f f'
+        ;
+        padding: 0.445rem;
+        justify-items: center;
+    }
+    .side-menu{
+    position: fixed;
+    background-color: white;
+    display: none;
+    width: 100vw;
+    height: 20vh;
+    justify-content: space-around;
+    align-items:center;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    top: 5rem;
+    z-index: 1;
+    }
+    .side-menu.active{
+        display: flex;
+    }
+    .tamplate>img{
+        display: grid;
+        width: 100%;
+        height: 200px;
+        justify-items: center;
+       
+    }
+
+    ul.menu{
+        display: none;
+    }
+
+    .texto-temp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: start;
+        margin-right: 3rem;
+    }
+    .texto-temp h2{
+        color: rgb(248, 94, 94);
+        font-size: 2.5rem;
+        font-weight: 500;
+        transition: transform 0.3s ease;
+        text-align: start;
+    
+    }
+    .texto-temp>p{
+        font-weight: 600;
+        font-size: 0.715rem;
+        text-align: start;
+    }
+    /*Categorias*/
+    aside{
+        display: none;
+    }
+    .aside-dropdown{
+        display: grid;
+        grid-area: a;
+        text-align: center;
+        justify-items: start;
+    }
+    footer{
+        display: grid;
+        grid-area: f;
+        width: 100vw;
+        height:auto;
+        bottom: 0vh;
+    }
+    
+   
+}
