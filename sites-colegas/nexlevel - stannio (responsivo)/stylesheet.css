@@ -1,0 +1,653 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden; /* Adicionado para evitar overflow horizontal */
+    color: #081b29;
+    background: rgb(2,0,36);
+    background: #081b29; 
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* BARRA DE MENU (NEXLEVEL/inicio,cursos,contato,sobre nós)*/
+.header { 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 465px; /*ajusta a distancia entre os itens*/
+    background: #081b29;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+
+
+/* NEXLEVEL */
+.logo{
+    position: relative;
+    font-size: 25px;
+    color: #0ef;
+    text-decoration: none;
+    font-weight: 600;
+   /* margin-left: -10px; /* Isso ajusta a posição do nome CODDIGG */
+}
+
+
+
+/* BARRA DE MENU (início/cursos/contato/sobre nós) */
+.navbar a {
+    display: inline-block;
+    font-size: 16px; /* Isso ajusta o tamanho da letra */
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px; /* tamanho dos espaços entre as opções*/
+    transition: .3s;
+    border-bottom: 2px solid #ffff; /* Adiciona um traço branco embaixo */
+}
+
+.navbar a:hover{
+    color: #0ef;
+}
+
+.level {
+    position: relative; /* Para posicionar o traço */
+    color: #ffff; /* Cor do texto */
+}
+
+.level::after {
+    content: ""; /* Cria um elemento vazio */
+    display: block; /* Faz com que o traço se comporte como um bloco */
+    height: 2px; /* Altura do traço */
+    background-color: #ffff; /* Cor do traço (branco) */
+    width: 100%; /* Largura igual ao texto */
+    position: absolute; /* Posiciona o traço */
+    left: 0; /* Alinha à esquerda */
+    bottom: 5px; /* Ajusta a distância do traço em relação ao texto */
+}
+
+
+    
+
+
+
+
+
+/* SESSÃO HOME */
+.home {
+    position: relative;
+    
+    height: 100vh;
+  
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-size: cover;
+  
+    gap: 20rem; 
+}
+
+.home-content {
+    max-width: 1200px; /* Limita a largura do conteúdo */
+  padding-left: 117px; /* Isso ajusta a posição do texto do lado da imagem */
+}
+
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+}
+
+.home-content p {
+    font-size: 16px;
+}
+
+.home-content h2{
+    font-size: 15px;
+    color: #00ffee;
+}
+
+
+
+/* botão das redes sociais */
+.home-sci a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 13px 10px 30px 0;
+}
+
+.home-sci a:hover{
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+
+}
+
+
+
+
+
+
+
+/* imagem do LOGO */
+.logo-img {
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    
+}
+
+.logo-img img {
+    position: relative;
+    width: 80%; /* tamanho da imagem */
+    max-width: 400%;
+    height: auto; 
+    border-radius: 35%;
+    box-shadow: 0 0 25px var(#0ef);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin: 20px auto 0;
+    margin-left: -60px; /*colocar a imagem mais pra direita*/
+    margin-top: -40px;
+    border: 5px solid orange; /* Borda laranja */
+    
+
+}
+
+.logo-img img:hover {
+    transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
+    box-shadow: 0 0 25px var(#0ef),
+                0 0 50px var(#0ef),
+                0 0 100px var(#0ef);
+}
+
+/*----------------------------------*/
+
+
+
+
+/*Sobre nós*/
+.about{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    color: #fff;
+    gap: 6rem; /* Distância entre o texto e a imagem */
+    padding: 0 10%; /* Ajustar padding lateral */
+    margin-bottom: 100px;
+}
+
+
+.about-img img {
+    padding-bottom: 20%;
+    background-color: transparent; /* Fundo padrão */
+    max-width: 300px; /* largura da imagem */
+    height: 23rem; /* altura da imagem */
+    width: 200%; /* tamanho da imagem */
+    border-radius: 60%; /* arredondamento da borda da imagem */
+    margin-top: 150px; /* empurra pra esquerda */
+    margin-left: 30px; /* empurra a imagem pra direita */
+    transition: transform 0.3s ease; /* Transição suave para o aumento */
+    cursor: pointer;
+}
+
+.about-img:hover img {
+    transform: scale(1.2); /* Aumenta a imagem ao passar o mouse */
+}
+
+
+
+.about-text h2{
+    font-size: 25px;
+    margin-bottom: -3.3rem;
+
+}
+
+.about-text h2 span{
+    color: #0ef;
+    
+}
+
+.about-text h4{
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+    margin-bottom: -0.7rem; /* distancia entre p e h4 */
+    margin-top: 50px;
+}
+
+.about-text p{
+    color: aliceblue;
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    margin: 10px 0;
+}
+
+
+/*----------------------------------*/
+
+
+
+
+/*Cursos Disponíveis*/
+.testimonials{
+    padding: 50px 0;
+    padding-top: 100px;
+    margin-top: -100px; /* Ajuste conforme necessário */
+    padding-bottom: 80px;
+}
+
+.testimonials-itens p {
+    margin: 20px 0; /* Ajuste a margem superior e inferior */
+    font-size: 15.5px; /* Ajuste para o tamanho desejado */
+    background: rgba(0, 0, 0, 0.7); /* Mantém a opacidade */
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    padding: 5px;
+    color: white;
+    flex-grow: 1; /* Faz com que o parágrafo ocupe o espaço restante */
+}
+
+.testimonials-itens h2 {
+    margin: -5px; /* Remove a margem padrão do título */
+    padding-bottom: 5px; /* Ajusta o espaçamento abaixo do título */
+}
+
+
+.testimonials-box{
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    align-items: center;
+    justify-content: center; /* Centraliza os itens */
+}
+
+
+
+/* Cursos Disponíveis*/
+.testimonials .heading{
+    margin-bottom: 2rem; /* Distancia entre cursos diponiveis e os cards */
+    text-align: center; /* Centraliza o texto */
+    font-size: 32px; /* Ajuste o tamanho da fonte se desejar */
+    color: #00ffee; /* Ajuste a cor do texto, se necessário */
+
+}
+
+.testimonials .heading::after {
+    content: ""; /* Cria um elemento vazio */
+    display: block; /* Faz com que o traço se comporte como um bloco */
+    height: 2px; /* Altura do traço */
+    background-color: #ffffff; /* Cor do traço (branco) */
+    width: 50%; /* Largura do traço, ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza o traço */
+    margin-top: 10px; /* Espaço entre o título e o traço */
+}
+/*--------------------*/
+
+
+
+/* imagens do testimonials */
+.testimonials-box img{
+    width: 100%; /* Ajusta a largura para 100% do container */
+    height: 220px; /* Mantém a proporção */
+    aspect-ratio: 1; /* Garante que a altura seja igual à largura, criando um quadrado */
+    border-radius: 5%;
+    object-fit: cover; /* Mantém a proporção sem distorção */
+    border: 3px solid rgb(53, 114, 118);
+    box-shadow: 0 0 25px rgb(26, 66, 69);
+    transition: transform 0.5s ease; /* Transição suave para o aumento */
+    
+}
+
+.testimonials-itens:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+
+/* cores da borda ao redor da imagem */
+.card-red img { 
+    border: 3px solid red; /* Borda vermelha */
+}
+
+.card-blue img {
+    border: 3px solid blue; /* Borda verde */
+}
+
+.card-yellow img {
+    border: 3px solid yellow; /* Borda azul */
+}
+
+
+/*--------------------*/
+
+
+
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta o número de colunas automaticamente */
+    gap: 2rem;
+}
+
+.testimonials-itens{
+    height: 350px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa */
+    
+    flex: 1 1 20%; /* Cada item ocupará cerca de 30% da largura, ajustando conforme o espaço disponível */
+    min-width: 250px; /* Largura mínimado card */
+    max-width: 250px; /* Largura máxima do card */
+    min-height: 550px;
+    justify-content: space-between; /* Garante que o espaço entre a imagem e o texto seja distribuído */
+
+    background: rgb(0, 0, 0, 0.7);
+    border: 3px solid rgb(238, 238, 238, 0.2);
+    border-radius: 2rem;
+    margin: 1rem; /* Espaçamento entre os itens */
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+.testimonials-itens:hover{
+    border: 3px solid rgb(24, 66, 69);
+    transform: translate();
+}
+
+.rating {
+    font-size: 17px; /* Tamanho das estrelas */
+    color: gold; /* Cor das estrelas */
+    margin-top: -10px; /* Espaçamento acima das estrelas */
+    margin: -10px 0; /* Espaçamento uniforme acima e abaixo */
+    text-align: center;
+    
+}
+
+
+
+
+
+
+/*Botão Saiba mais*/
+.saiba-mais {
+    display: inline-block;
+    margin-top: -0.50rem; /* Espaço acima do botão */
+    padding: 10px 15px; /* Tamanho do botão */
+    background-color: #00ffee; /* Cor de fundo do botão */
+    color: #081b29; /* Cor do texto do botão */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Efeito de transição */
+}
+
+.saiba-mais:hover {
+    background-color: #1abc9c; /* Cor do botão ao passar o mouse */
+}
+/*--------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Contato*/
+.contact {
+    display: flex; /* Habilita o Flexbox */
+    min-height: 100vh; /* Altura mínima */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    padding: 30px 17%; /* Ajustar padding lateral */
+    gap: 12.5rem; /* Espaçamento entre os itens */
+    align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+
+
+.contact-text, .contact-form {
+    max-width: 300px; /* Largura máxima semelhante à seção do cabeçalho */
+    flex: 1; /* Faz com que os itens ocupem o espaço restante */
+}
+
+
+.contact-form {
+    margin-left: 20px; /* Espaço entre o texto e o formulário */
+    margin-left: -10px; /* Mova um pouco para a esquerda */
+    
+}
+
+.contact-text {
+    background-color: #081b29; /* Adicionando a cor de fundo */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    padding: 30px; /* Padding geral */
+    margin-bottom: 2rem; /* Ajuste conforme necessário */
+    border-radius: 10px; /* Opcional: arredondar as bordas */
+}
+
+
+.contact-text h2{
+    font-size: 32px; /* tamanho do h2 */
+    line-height: 1.2; /* ajuste a linha de altura */
+}
+
+/* contate-(me)*/
+.contact-text h2 span{ 
+    color: #0ef;
+    font-size: 32px;
+}
+
+.contact-text h4{
+    margin: 10px 0; /* ajuste a margem */
+    color: rgb(228, 228, 228);
+    font-size: 18px; /* ajuste o tamanho do h4 */
+    font-weight: 600;
+    width: 100%; /* Faz com que o h4 ocupe toda a largura disponível */
+    margin: 0; /* Remove a margem, se necessário */
+    padding-bottom: 10px; /* Adiciona espaço abaixo, se desejado */
+    padding: 1px 0%;
+}
+
+.contact-text p{
+    color: rgb(177, 177, 177);
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 2rem;
+}
+
+
+
+
+/* icones de contato (telefone/email) */
+.contact-list{
+    margin-bottom: 3rem;
+}
+
+.contact-list li{
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-list i{
+    display: inline-block;
+    color: #0ef;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .40s ease;
+}
+
+.contact-list li a:hover{
+    transform: scale(1.01) translateY(-5px);
+}
+
+/*----------------------------------*/
+
+
+
+
+.contact-icons i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    opacity: 0;
+}
+
+.contact-icons i:hover{
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+
+.contact-form form{
+    position: relative;
+}
+
+.contact-form form input, form textarea{
+    border: none;
+    outline: none;
+    width: 103%; /* Aumenta a largura das caixas */
+    padding: 18px;
+    background: #555557;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: -15rem;
+    border-radius: 0.5rem;
+    margin-top: 40px; /* Adicione esta linha para mover as caixas para baixo */
+}
+
+
+.contact-form textarea{
+    resize: none;
+    height: 220px;
+    margin-top: 40px; /* Adicione esta linha para mover as caixas para baixo */
+    
+}
+
+.contact-form form .send {
+    display: inline-block;
+    padding: 14px 60px;
+    background-color: #00ffee; /* Cor de fundo do botão */
+    color: #081b29; /* Cor do texto do botão */
+    border-radius: 40px;
+    font-size: 14px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    animation: slidetop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+    margin-top: 250px; /* espaçamento acima do botão se necessário */
+    transition: background-color 0.3s; /* Efeito de transição */
+}
+
+
+.contact-form form .send:hover {
+    background-color: #1abc9c; /* Cor do botão ao passar o mouse */
+}
+/*----------------------------------*/
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    clear: both;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer strong {
+    font-weight: bold;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+    }
+
+    .about {
+        grid-template-columns: 1fr; /* Coloca a imagem e o texto em uma única coluna */
+        gap: 2rem; /* Ajusta o espaço entre eles */
+    }
+
+    .testimonials-box {
+        flex-direction: column;
+    }
+
+    .testimonials-itens {
+        max-width: 90%; /* Ajusta os cartões para ocuparem mais largura em telas menores */
+    }
+}

@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden; 
+}
+
+body{
+    font-family: Helvetica, sans-serif;
+    background-image: url(background-site.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    z-index: 2;
+    box-shadow: 0px 0px 250px rgba(0,0,0,1) inset;
+
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px;
+    background-color: #2e2e2e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.nav > a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border: 1px solid transparent;
+}
+
+.nav > a:hover {
+    background-color: #202020;
+    border: 1px solid black; 
+}
+.entrada{
+    background-image: linear-gradient( to top, rgba(255, 255, 255, 0.8), white);
+    height: 100vh; 
+    min-height: 100vh;
+    width: 100%; 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    margin: 21rem 0 0 auto;
+    width: auto;
+}
+.bv{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.container{
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 1rem 2rem ;
+    text-align: center;
+    font-size: 18px;
+    width: 80%;
+    margin: 1.3rem auto;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+}
+
+.metacritic{
+    background-color: #383838;
+    color: rgb(18, 163, 18);
+    max-width: 60%;
+    min-width: 50%;
+    padding: 4px;
+    margin: auto;
+}
+.titulos{
+    background-color: #03A007;
+    text-align: center;
+    border-color: #007448;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    margin: 0 5%;
+    color: white;
+    text-shadow: 0px 2px #00321f;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 3px;
+}
+.imgdiv{
+    display: block;
+    margin: auto;
+    max-width: 90%; 
+}
+.img{
+    display: block;
+    margin: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    width: 80%;
+}
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+    left: 0;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .logo{
+        width: 77%;
+        margin-right: auto;
+    }
+    .bv{
+        font-size: 17px;
+    }
+
+    .img{
+        width: 82%;
+    }
+
+    .container{
+        width: 95%;
+        font-size: 17px;
+    }
+}
+@media (max-width: 480px){
+    .logo{
+        width: 77%;
+        margin-right: auto;
+    }
+    .bv{
+        font-size: 14px;
+    }
+    .img{
+        width: 100%;
+    }
+
+    .container{
+        width: 100%;
+        font-size: 17px;
+    }
+}
