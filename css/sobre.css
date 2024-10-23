@@ -165,8 +165,8 @@ label {
     width: 200px;
 }
 
-.card img {
-    border-radius: 50%;
+.team-cards img {
+    border-radius: 10px;
     width: 100px;
     height: 100px; 
 }
