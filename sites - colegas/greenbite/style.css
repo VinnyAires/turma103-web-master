@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+@font-face {
+    font-family: BebaNeue;
+    src: url(BebasNeue-Regular.ttf);
+}
+body{
+    font-size: 14pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+background-color: white;}
+
+.titulo{ text-align: center;
+}
+.container{
+    display: grid;
+    max-width: auto;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 15vh auto 5vh;
+    grid-template-areas: 
+    "h h"
+    "m m"
+    "f f";
+    gap: 5px;
+    margin: 0px auto;
+}
+header{ 
+    grid-area: h;
+    text-align: center;
+    padding: .5rem;
+    background-color: #96d67d;
+
+}
+
+main{
+    background-color: #ffffff;
+    grid-area: m;
+    text-align: justify;
+    padding: 20px;
+
+}
+
+#logotipo{
+    font-family: 'BebaNeue';
+    font-size: 25pt;
+    text-decoration: none;
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+footer{
+    grid-area: f;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    background-color: #73aa5d;
+    color: whitesmoke;
+}
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.menu{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+}
+.menu>li{
+    position: relative;
+    
+}
+.menu>li:hover{
+    background-color:#73aa5d;
+}
+.menu>li>a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 0.5rem;
+}
+
+.dropdown:hover .dropdown-conteudo{
+    display: block;
+}
+.dropdown-conteudo{
+    list-style: none;
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-conteudo>li>a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-conteudo>li:hover{
+    background-color: #96d67d;
+}
+#checkbox{
+    display: none;
+}
+.label-menu, .check-logo{ display:none ;}
+
+.label-menu{
+    display: inline-flex ;
+    text-align: center;
+    padding: 1rem;
+    cursor: pointer;
+    align-items: center;
+}
+.label-ham{ 
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+
+}
+
+#checkbox:checked + .label-ham +.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+@media (max-width: 768px) {
+
+.menu {
+    display: none;
+
+}
+
+.label-ham{
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.hamburger{
+    border-top: 0.125rem solid;
+    width: 1.25rem;
+    margin-left: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#checkbox + .label-ham{
+    display: flex;
+}
+.hamburger::before,
+.hamburger::after{
+    content: "";
+    display: flex;
+    width: 1.25rem;
+    height: 0.125rem;
+    background-color: currentColor;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+}
+
+.checkbox:checked ~.label-ham .hamburger{
+    border-top-color: transparent;
+}
+.checkbox:checked ~.label-ham .hamburger::before{
+    transform: rotate(135deg);}
+.checkbox:checked ~.label-ham .hamburger::after{
+    transform: rotate(-135deg);
+    top: -0.4375rem;    
+}
+}
+
+.card-main{
+    display: grid;
+    grid-template-rows:auto;
+    grid-template-columns:repeat(auto-fill, minmax(350px, 1fr));
+    gap: 5px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .5rem;
+    height: auto;
+    margin: 5px;
+    transition: transform 0.4, box-shadow 0.3 ease;
+}
+.card>p{
+    margin: 10px 0;
+}
+.card>h2{
+    font-size: 1.2rem;
+}
+.card:hover{
+    box-shadow: #318f0c41;
+    transform: scale(1.01);
+}
+
+.box>p{
+    margin: 10px 0;
+justify-content: center;}
+#ins{
+    color: #73aa5d;
+}
+.ctt {
+    color: #73aa5d;
+    list-style:none;
+
+}
+img{
+    margin: 10px;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    
+}
+
+@media (max-width:780px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "h"
+        "m"
+        "f"
+        ;
+    }
+
+}
+
+
+
