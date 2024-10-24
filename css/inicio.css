@@ -162,7 +162,8 @@ section{
         display: flex;
     }
     header{
-        flex-direction: column;
+        flex-direction:flex;
+        justify-content: center;
     }
     .navmenu li{
         margin: 10px 0;
