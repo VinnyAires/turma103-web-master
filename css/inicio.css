@@ -164,6 +164,7 @@ section{
     header{
         flex-direction:flex;
         justify-content: center;
+        gap: 50px;
     }
     .navmenu li{
         margin: 10px 0;
