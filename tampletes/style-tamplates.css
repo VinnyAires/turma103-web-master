@@ -577,16 +577,17 @@ footer{
         z-index: 1;
     }
     .container {
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 10vh;
         grid-template-areas:
-        'h'
-        'i'
-        'a'
-        'm'
-        'f'
+        'h h'
+        'i i'
+        'a a'
+        'm m'
+        'f f'
         ;
         padding: 0.445rem;
         justify-items: center;
+        align-items: center;
     }
     .side-menu{
     position: fixed;
@@ -610,6 +611,7 @@ footer{
         display: grid;
         grid-area: m;
         border: none;
+        max-width: 90vw;
     }
     .tamplate>img{
         width: 90%;
