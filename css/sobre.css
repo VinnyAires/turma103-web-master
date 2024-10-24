@@ -107,6 +107,10 @@ section {
     .centro-texto h2{
         font-size: 50px;
     }
+    #foto-turma{
+        width: 430px;
+        border-radius: 15px;
+    }
 }
 
 #menu-toggle:hover {
