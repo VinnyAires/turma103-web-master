@@ -8,8 +8,7 @@
     text-decoration: none;
 }
 header{
-    position: fixed;
-    width: 90%;
+    width: 100%;
     top: 0;
     right: 0;
     z-index: 1000;
@@ -152,45 +151,25 @@ section{
     display: none;
 
 }
-
-@media (max-width: 768px){
-    .navmenu{
+@media (max-width: 768px) {
+    .navmenu {
         flex-direction: column;
         display: none;
     }
-    .navmenu.active{
+    .navmenu.active {
         display: flex;
     }
-    header{
+    header {
         flex-direction:flex;
-        justify-content: center;
-        gap: 50px;
+        width: 300px;
     }
-    .navmenu li{
+    header, img{
+        width: 100%;
+    }
+    .navmenu li {
         margin: 10px 0;
     }
-    .inicio-btn{
-        width: 50%;
-    }
-    #img{
-        display: none;
-    }
-    .inicio{
-        font-size: 30px;
-    }
-    .texto h1{
-        font-size: 50px;
-        text-align: center;
-    }
-    .texto h5{
-        font-size: 30px;
-        text-align: center;
-    }
-    .carousel{
-        font-size: 30px;
-        text-align: center;
-    }
-    #menu-toggle{
+    #menu-toggle {
         display: block;
         cursor: pointer;
         background-color: #fff;
@@ -198,8 +177,38 @@ section{
         border: none;
         padding: 10px;
         font-size: 18px;
-        z-index: 0;
-    
+    }
+}
+
+@media (max-width: 768px){
+
+    .inicio-btn{
+        width: 50%;
+        border-radius: 20px;
+        margin: 30px;
+    }
+    #img{
+        margin-top: -30%;
+        width: 250%;
+        height: 100%;
+        opacity: 15%;
+    }
+    .inicio{
+        font-size: 30px;
+        width: 100%;
+        margin-top: -50%;
+    }
+    .texto h1{
+        font-size: 60px;
+        text-align: center;
+    }
+    .texto h5{
+        font-size: 40px;
+        text-align: center;
+    }
+    .carousel{
+        font-size: 30px;
+        text-align: center;
     }
 
 }

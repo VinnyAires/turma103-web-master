@@ -9,7 +9,6 @@
 }
 
 header {
-    position: fixed;
     width: 100%;
     top: 0;
     right: 0;
@@ -81,7 +80,11 @@ section {
         display: flex;
     }
     header {
-        flex-direction: column;
+        flex-direction:flex;
+        width: 300px;
+    }
+    header, img{
+        width: 100%;
     }
     .navmenu li {
         margin: 10px 0;
@@ -184,6 +187,10 @@ section {
     .card {
         flex: 1 1 45%; /* Dois cartões por linha em telas menores */
         max-width: none; /* Remove a largura máxima */
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
     }
 }
 
