@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 3000px;
   }
   
   nav ul {
@@ -70,6 +71,7 @@ nav a:hover{
     color: #fff;
     position: relative;
     bottom: 0;
-    width: 100%;
+    max-width:3000px;
   }
+
   
