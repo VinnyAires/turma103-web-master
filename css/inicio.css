@@ -19,8 +19,7 @@ header{
 
 }
 .logo img{
-    width: 300px;
-    height: auto;
+    height: 50px;
 }
 .navmenu{
     display: flex;
