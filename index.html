@@ -17,29 +17,32 @@ href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 <body>
     <header>
         <a href="index.html" class="logo"><img src="img-inicio/1.png" alt=""></a>
-        <ul class="navmenu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="tampletes/templates.html">Templates</a></li>
-            <li><a href="#">Outros</a>
-                <ul class="dropdown">
-                    <li><a href="servico.html">Serviços</a></li>
-                    <li><a href="orcamento.html">Orçamento</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contatos</a></li>
-                </ul>
-            </li>
-        </ul>
-        <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
-    </header>
-
+        <button class="hamburguer"></button>
+        </header>
+        <nav class="side-menu">
+            <ul class="s-menu">
+                <li class="side-menu-item">
+                    <a href="../orcamento.html">ORÇAMENTO</a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="../servico.html">SERVIÇOS</a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="tampletes/templates.html">TAMPLATES</a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="sobre.html">SOBRE</a>
+                </li>
+            </ul>
+        </nav>
     <section class="inicio">
         <div class="texto">
             <h5 class="wave">Seja bem-vindo</h5>
             <h1 class="peek">WebMaster</h1>
             <div class="carousel">
-                <p>Desenvolvimento Web</p>
-                <p>Design Responsivo</p>
-                <p>Soluções Personalizadas</p>
+                <p class="p">Desenvolvimento Web</p>
+                <p class="p">Design Responsivo</p>
+                <p class="p">Soluções Personalizadas</p>
             </div>
 
             <a href="servico.html" class="inicio-btn">Ver mais<i class='bx bx-right-arrow-alt' ></i></a>
