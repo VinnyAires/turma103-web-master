@@ -12,96 +12,224 @@ header {
     width: 100%;
     top: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 10%;
 }
 
-.logo img {
-    max-width: 300px;
+.logo>img {
+    width: 20vw;
     height: auto;
 }
 
-.navmenu {
-    display: flex;
-}
-
-.navmenu a {
-    color: black;
-    font-size: 25px;
-    text-transform: capitalize;
-    padding: 10px 20px;
-    font-weight: 400;
-    transition: all .42s ease;
-}
-
-.navmenu > li {
-    display: inline-block;
-    position: relative;
-}
-
-.dropdown {
+.hamburguer{
     display: none;
+    border: none;
+    background-color: none;
+    border-top: 3px solid black;
+    cursor: pointer;
+}
+
+.hamburguer::before,
+.hamburguer::after{
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background-color: #000;
+    margin-top: 0.225rem;
+
+}
+.side-menu{
+    display: none;
+    position: fixed;
+    background-color: rgb(236, 236, 236);
+    color: #000;
+    transition: 1s ease-in-out;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    z-index: 1;
+}
+/*---------------MENU_RESPONSIVO---------------*/
+.side-menu-item>a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    display: flex;
+    white-space: nowrap;
+}
+.side-menu-item::after {
+    content: "";
+    visibility: hidden;
     position: absolute;
+    bottom: 0; /* Alinha a borda na parte inferior */
+    left: 0;
+    width: 100%; /* Preenche a largura do link */
+    height: 0.125rem; /* Altura da borda */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1); /* Cor da borda */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Ao passar o mouse, anima o pseudo-elemento */
+.side-menu-item:hover::after {
+    visibility: visible;
+    transform: translateX(0); /* Move a borda para a posição */
+}
+
+.side-menu-item a:hover {
+    background-color: rgba(0, 0, 0, 0.055); /* Fundo semi-transparente */
+    /* Remova a borda aqui, pois agora a animação é do pseudo-elemento */
+}
+/*---------------MENU_INICIAL---------------*/
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
     padding: 0;
     margin: 0;
-    background-color: white; 
-    border: 1px solid #ccc; 
+}
+.menu-item {
+    position: relative;
+
+}
+.menu-item>a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    display: flex;
+    white-space: nowrap;
+}
+.menu-item::after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    bottom: 0; /* Alinha a borda na parte inferior */
+    left: 0;
+    width: 100%; /* Preenche a largura do link */
+    height: 0.125rem; /* Altura da borda */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1); /* Cor da borda */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
 }
 
-.navmenu > li:hover .dropdown {
-    display: block; 
+/* Ao passar o mouse, anima o pseudo-elemento */
+.menu-item:hover::after {
+    visibility: visible;
+    transform: translateX(0); /* Move a borda para a posição */
 }
 
-.dropdown li {
-    display: block; 
+.menu-item a:hover {
+    background-color: rgba(0, 0, 0, 0.055); /* Fundo semi-transparente */
+    /* Remova a borda aqui, pois agora a animação é do pseudo-elemento */
 }
 
-.navmenu a:hover {
-    color: red;
-}
 
-section {
-    padding: 5% 10%;
-}
-
-#menu-toggle {
+/* Submenu flutuante */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Centraliza horizontalmente em relação ao item pai */
+    transform: translateX(-50%); /* Ajusta para que o submenu fique exatamente no centro */
+    background-color: white;
+    padding: 1.5rem;
     display: none;
+    box-shadow: 0rem 0.25rem 0.5rem (0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    z-index: 2;
+    width: 20rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 1rem; /* Espaçamento entre as colunas */
 }
+
+/* Animação ao passar o mouse */
+.menu-item:hover .sub-menu {
+    display: grid;
+    opacity: 1;
+    transform: translate(-50%, 0); /* Efeito de subida suave e centralização */
+}
+
+/* Itens do submenu */
+.sub-menu-items {
+    margin-bottom: 1em;
+}
+
+.sub-menu-items a {
+    color: #555;
+    font-weight: bold;
+    padding: 0.5em 0;
+    display: flex;
+    text-decoration: none;
+}
+
+.sub-menu-items a:hover {
+    background-color: #f4f4f4;
+}
+
+.sub-text {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/* Estilo para garantir que cada item tenha o espaçamento adequado */
+.sub-menu-items:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+/* Efeito de texto pequeno */
+.sub-text {
+    font-size: 0.875em;
+    line-height: 1.4;
+    color: #555;
+}
+
 
 @media (max-width: 768px) {
-    .navmenu {
-        flex-direction: column;
+    header {
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+    }
+    .logo img{
+        width: 50vw;
+        height: auto;
+    }
+    ul.menu{
         display: none;
     }
-    .navmenu.active {
-        display: flex;
-    }
-    header {
-        flex-direction:flex;
-        width: 300px;
-    }
-    header, img{
-        width: 100%;
-    }
-    .navmenu li {
-        margin: 10px 0;
-    }
-    #menu-toggle {
+    
+    .hamburguer{
         display: block;
-        cursor: pointer;
-        background-color: #fff;
-        color: rgb(21, 20, 20);
-        border: none;
-        padding: 10px;
-        font-size: 18px;
+        z-index: 1;
     }
-}
-
-#menu-toggle:hover {
-    color: red;
+    .side-menu{
+    position: absolute;
+    background-color: white;
+    display: none;
+    width: 110vw;
+    height: 20vh;
+    justify-content: space-around;
+    align-items:center;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    top: 5rem;
+    z-index: 1;
+    }
+    .side-menu.active{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    }
 }
 
 .cards-servicos {

@@ -5,13 +5,24 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: "Jost", sans-serif;
+
+}
+.container{
+    display: grid;
+    grid-template-columns: 25vh 1fr 1fr 1fr;
+    grid-template-areas:
+      'h h n n'
+      'm m m m'
+      'f f f f' ;
+    overflow-x: hidden;
 }
 
 header {
-    width: 100%;
+    grid-area: h;
+    width: 90vw;
     top: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,10 +31,116 @@ header {
 }
 
 .logo img {
-    max-width: 300px;
+    width: 20vw;
     height: auto;
 }
+/*------------MENU_INICIAL------------*/
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-item {
+    position: relative;
 
+}
+.menu-item>a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    display: flex;
+    white-space: nowrap;
+}
+.menu-item::after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    bottom: 0; /* Alinha a borda na parte inferior */
+    left: 0;
+    width: 100%; /* Preenche a largura do link */
+    height: 0.125rem; /* Altura da borda */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1); /* Cor da borda */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Ao passar o mouse, anima o pseudo-elemento */
+.menu-item:hover::after {
+    visibility: visible;
+    transform: translateX(0); /* Move a borda para a posição */
+}
+
+.menu-item a:hover {
+    background-color: rgba(0, 0, 0, 0.055); /* Fundo semi-transparente */
+    /* Remova a borda aqui, pois agora a animação é do pseudo-elemento */
+}
+
+
+/* Submenu flutuante */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Centraliza horizontalmente em relação ao item pai */
+    transform: translateX(-50%); /* Ajusta para que o submenu fique exatamente no centro */
+    background-color: white;
+    padding: 1.5rem;
+    display: none;
+    box-shadow: 0rem 0.25rem 0.5rem (0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    z-index: 2;
+    width: 20rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 1rem; /* Espaçamento entre as colunas */
+}
+
+/* Animação ao passar o mouse */
+.menu-item:hover .sub-menu {
+    display: grid;
+    opacity: 1;
+    transform: translate(-50%, 0); /* Efeito de subida suave e centralização */
+}
+
+/* Itens do submenu */
+.sub-menu-items {
+    margin-bottom: 1em;
+}
+
+.sub-menu-items a {
+    color: #555;
+    font-weight: bold;
+    padding: 0.5em 0;
+    display: flex;
+    text-decoration: none;
+}
+
+.sub-menu-items a:hover {
+    background-color: #f4f4f4;
+}
+
+.sub-text {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/* Estilo para garantir que cada item tenha o espaçamento adequado */
+.sub-menu-items:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+/* Efeito de texto pequeno */
+.sub-text {
+    font-size: 0.875em;
+    line-height: 1.4;
+    color: #555;
+}
+/*--------------MENU_RESPONSIVO---------------*/
 .hamburguer{
     display: none;
     border: none;
@@ -88,27 +205,147 @@ header {
     background-color: rgba(0, 0, 0, 0.055); /* Fundo semi-transparente */
     /* Remova a borda aqui, pois agora a animação é do pseudo-elemento */
 }
+/*-----------------MENU_INICIAL---------------*/
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-item {
+    position: relative;
+
+}
+.menu-item>a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    display: flex;
+    white-space: nowrap;
+}
+.menu-item::after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    bottom: 0; /* Alinha a borda na parte inferior */
+    left: 0;
+    width: 100%; /* Preenche a largura do link */
+    height: 0.125rem; /* Altura da borda */
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.1); /* Cor da borda */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+}
+
+/* Ao passar o mouse, anima o pseudo-elemento */
+.menu-item:hover::after {
+    visibility: visible;
+    transform: translateX(0); /* Move a borda para a posição */
+}
+
+.menu-item a:hover {
+    background-color: rgba(0, 0, 0, 0.055); /* Fundo semi-transparente */
+    /* Remova a borda aqui, pois agora a animação é do pseudo-elemento */
+}
+
+
+/* Submenu flutuante */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* Centraliza horizontalmente em relação ao item pai */
+    transform: translateX(-50%); /* Ajusta para que o submenu fique exatamente no centro */
+    background-color: white;
+    padding: 1.5rem;
+    display: none;
+    box-shadow: 0rem 0.25rem 0.5rem (0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    z-index: 2;
+    width: 20rem;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 1rem; /* Espaçamento entre as colunas */
+}
+
+/* Animação ao passar o mouse */
+.menu-item:hover .sub-menu {
+    display: grid;
+    opacity: 1;
+    transform: translate(-50%, 0); /* Efeito de subida suave e centralização */
+}
+
+/* Itens do submenu */
+.sub-menu-items {
+    margin-bottom: 1em;
+}
+
+.sub-menu-items a {
+    color: #555;
+    font-weight: bold;
+    padding: 0.5em 0;
+    display: flex;
+    text-decoration: none;
+}
+
+.sub-menu-items a:hover {
+    background-color: #f4f4f4;
+}
+
+.sub-text {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/* Estilo para garantir que cada item tenha o espaçamento adequado */
+.sub-menu-items:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+/* Efeito de texto pequeno */
+.sub-text {
+    font-size: 0.875em;
+    line-height: 1.4;
+    color: #555;
+}
 
 
 @media (max-width: 768px) {
     header {
-        flex-direction: flex;
-        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
     }
-    header, img{
-        width: 100%;
+    .logo img{
+        width: 50vw;
+        height: auto;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'h'
+        'm'
+        'f';
+    }
+    ul.menu{
+        display: none;
     }
     .hamburguer{
         display: block;
         z-index: 1;
     }
     .side-menu{
-    position: fixed;
+    position: absolute;
+    top: 0;
     background-color: white;
     display: none;
-    width: 110vw;
+    width: 100vw;
     height: 20vh;
-    justify-content: space-around;
+    justify-content: spcae-around;
     align-items:center;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
     top: 5rem;
@@ -119,8 +356,15 @@ header {
     align-items: center;
     justify-content: space-around;
     }
+    .contato{
+        width: 85% !important;
+    }
+    .centro-texto{
+       font-size: 2.5rem;
+    }
 }
 
+/*----------FORM----------*/
 .centro-texto {
     text-align: center;
     font-size: 3rem;
@@ -129,9 +373,10 @@ header {
     color: red;
 }
 
-#contato {
-    max-width: 700px;
-    margin: 200px auto;
+.contato {
+    grid-area: m;
+    width: 50%;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -186,4 +431,10 @@ textarea:focus {
 
 .enviar:focus {
     outline: 2px solid #f61717;
+}
+footer{
+    grid-area: f;
+    padding: 1.25rem; /* 20px = 1.25rem */
+    text-align: center;
+    background-color: #f4f4f4;
 }

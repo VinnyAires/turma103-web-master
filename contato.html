@@ -7,27 +7,70 @@
     <link rel="stylesheet" href="css/contato.css">
     <title>Webmaster</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;400;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
+<div class="container">
+
+
+    
     <header>
         <a href="/index.html" class="logo"><img src="img-inicio/1.png" alt="Logo do Webmaster"></a>
         <button class="hamburguer"></button>
-
+        <nav>  
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="../sobre.html">SOBRE</a>
+                </li>
+                <li class="menu-item">
+                    <a href="tampletes/templates.html">TEMPLATE</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../servico.html">SERVIÇOS</a>
+                    <div class="sub-menu">
+                        <div class="sub-menu-items">
+                            <a href="../servico.html">Desenvolvimento Web</a>
+                            <div class="sub-text">
+                                Criação de websites responsivos e otimizados para dispositivos móveis.
+                            </div>
+                        </div>
+                        <div class="sub-menu-items">
+                            <a href="../servico.html">Consultoria de TI</a>
+                            <div class="sub-text">
+                                Soluções estratégicas em tecnologia da informação para o seu negócio.
+                            </div>
+                        </div>
+                        <div class="sub-menu-items">
+                            <a href="../servico.html">SEO e Marketing Digital</a>
+                            <div class="sub-text">
+                                Otimização de sites para mecanismos de busca e estratégias de marketing digital.
+                            </div>
+                        </div>
+                        <div class="sub-menu-items">
+                            <a href="../servico.html">Desenvolvimento de E-commerce</a>
+                            <div class="sub-text">
+                                Otimização de sites para mecanismos de busca e estratégias de marketing digital.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="../contato.html">CONTATO</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <nav class="side-menu">
             <ul class="s-menu">
                 <li class="side-menu-item">
-                    <a href="../orcamento.html">ORÇAMENTO</a>
-                </li>
-                <li class="side-menu-item">
                     <a href="../servico.html">SERVIÇOS</a>
                 </li>
                 <li class="side-menu-item">
-                    <a href="tampletes/templates.html">TAMPLATES</a>
+                    <a href="tampletes/templates.html">TEMPLATES</a>
                 </li>
                 <li class="side-menu-item">
                     <a href="sobre.html">SOBRE</a>
@@ -35,7 +78,7 @@
             </ul>
         </nav>
 
-    <section id="contato">
+    <div class="contato">
         <div class="centro-texto">
             <h2>Conta<span>to</span></h2>
         </div>
@@ -52,8 +95,11 @@
             <textarea id="mensagem" name="mensagem" required></textarea>
             <button type="submit" class="enviar">Enviar</button>
         </form>
-    </section>
-
+    </div>
+    <footer>
+        <p>Programador Web 103.2024</p>
+    </footer>
+</div>
     <script src="java.js"></script>
 </body>
 </html>
