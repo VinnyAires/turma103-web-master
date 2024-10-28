@@ -3,136 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Master-blog</title>
+    <title>Blog - Web Master</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: whitesmoke;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
 
-        header {
-            background: rgb(50, 2, 97);
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header {
+    background: rgb(30, 1, 59);
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que o header quebre em linhas menores */
+}
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
 
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
-        }
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
 
-        nav a:hover {
-            color: rgb(140, 78, 202);
-            transform: scale(1.1);
-        }
+nav a:hover {
+  color: rebeccapurple;
+  transform: scale(1.2);
+}
 
-        .banner {
-            background: rebeccapurple;
-            color: #fff;
-            padding: 30px 20px;
-            text-align: center;
-        }
+.banner {
+    background: rebeccapurple;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
 
-        article {
-            padding: 10px;
-        }
+article {
+    padding: 10px;
+}
 
-        .search-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Permite que os elementos quebrem em linhas menores */
+}
 
-        .search-container input[type="text"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 300px;
-            margin-right: 10px;
-        }
+.search-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    margin-right: 10px;
+}
 
-        .search-container input[type="submit"] {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            background-color: rgb(50, 2, 97);
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.search-container input[type="submit"] {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: rebeccapurple;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .search-container input[type="submit"]:hover {
-            background-color: rgb(140, 78, 202);
-        }
+.search-container input[type="submit"]:hover {
+    background-color: rgb(59, 4, 114);
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 2fr)); /* Ajusta a coluna para 300px */
+    gap: 25px;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 500px;
+}
 
-        .card {
-            border: 2px solid white;
-            border-radius: 5px;
-            padding: 1rem;
-            text-align: center;
-            background-color: #f1f1f1;
-        }
+.card {
+    border: 2px solid rebeccapurple;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 30px;
+    padding: 1rem;
+    text-align: center;
+    background-color: whitesmoke;
+}
 
-        .card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-        }
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-        }
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
 
-        .leitura {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: blue;
-        }
+.leitura {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: rgb(0, 0, 255);
+}
 
-        .leitura:hover {
-            text-decoration: underline;
-        }
+.leitura:hover {
+    text-decoration: underline;
+}
 
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: rebeccapurple;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1e0a3d;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Alinha os itens do header verticalmente */
+        align-items: flex-start; /* Alinha itens à esquerda */
+    }
+
+    nav ul {
+        flex-direction: column; /* Muda a lista de navegação para coluna */
+        align-items: flex-start; /* Alinha itens à esquerda */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espaçamento vertical entre os itens do menu */
+    }
+
+    .search-container {
+        flex-direction: column; /* Coloca o campo de busca e o botão em coluna */
+        align-items: center; /* Centraliza os elementos */
+    }
+
+    .search-container input[type="text"] {
+        width: 100%; /* Faz o campo de busca ocupar 100% da largura em telas pequenas */
+        margin-bottom: 10px; /* Adiciona espaço abaixo do campo de busca */
+    }
+
+    .cards {
+        grid-template-columns: 1fr; /* Para telas pequenas, mostra apenas uma coluna */
+    }
+}
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Minha Loja</div>
+        <div class="logo"><img src="logoo.png" alt=""></div>
         <nav>
             <ul>
                 <li><a href="inicio.html">Inicio</a></li>
@@ -160,42 +198,42 @@
 
             <div class="cards">
                 <div class="card">
-                    <img src="img/blo3.jpeg" alt="">
+                    <img src="/img/blo3.jpeg" alt="">
                     <h2>Marcenaria e Carpintaria</h2>
                     <p>Dicas e cuidados ao adquirir novos móveis. <a href="#" class="leitura">Leia mais...</a></p>
                 </div>
                 <div class="card">
-                    <img src="img/blog1.jpeg" alt="">
+                    <img src="/img/blog1.jpeg" alt="">
                     <h2>Educação Infantil</h2>
                     <p>Dicas e atividades para quem trabalha com maternal. <a href="#" class="leitura">Leia mais...</a></p>
                 </div>
                 <div class="card">
-                    <img src="img/blo2.jpeg" alt="">
+                    <img src="/img/blo2.jpeg" alt="">
                     <h2>Escritório de Engenharia</h2>
                     <p>Abordagem sobre qualidade na construção civil. <a href="#" class="leitura">Leia mais...</a></p>
                 </div>
                 <div class="card">
-                    <img src="img/blo.jpeg" alt="">
+                    <img src="/img/blo.jpeg" alt="">
                     <h2>Laboratório de Análises Clínicas</h2>
                     <p>Exames laboratoriais importantes para a saúde. <a href="#" class="leitura">Leia mais...</a></p>
                 </div>
                 <div class="card">
-                    <img src="img/blog4.jpeg" alt="">
+                    <img src="/img/blog4.jpeg" alt="">
                     <h2>Loja de Sofás e Estofados</h2>
                     <p>Dicas para escolher o sofá ideal. <a href="#" class="leitura">Leia mais...</a></p>
                 </div>
                 <div class="card">
-                    <img src="img/blogg.jpeg" alt="">
+                    <img src="/img/blogg.jpeg" alt="">
                     <h2>Sorveteria</h2>
                     <p>Descubra as diferentes texturas e sabores de sorvete. <a href="#" class="leitura">Leia mais...</a></p>
                 </div>
                 <div class="card">
-                    <img src="img/blog9.jpeg" alt="">
+                    <img src="/img/blog9.jpeg" alt="">
                     <h2>Universidade</h2>
                     <p>Esta talvez seja uma das escolhas mais difíceis. <a href="#" class="leitura">Leia mais...</a></p>
                 </div>
                 <div class="card">
-                    <img src="img/blog10.jpeg
+                    <img src="/img/blog10.jpeg
                     " alt="">
                     <h2>Culinária Vegana</h2>
                     <p>Essa receita de wrap foi inspirada no Carnaval que está começando. <a href="#" class="leitura">Leia mais...</a></p>

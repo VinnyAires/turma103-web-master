@@ -1,77 +1,115 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: whitesmoke;
-  }
-  
-  header {
-    background: rgb(50, 2, 97);
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 3000px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+
+header {
+  background: #1e0a3d;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Adiciona wrap para responsividade */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+  display: inline;
+  margin: 0 15px;
 }
 
 nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-    transition: colo 0.3s, transform 0.3s;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
 
+nav a:hover {
+  color: rebeccapurple;
+  transform: scale(1.2);
 }
-nav a:hover{
-  color: rgb(140, 78, 202);
-  transform: scale(1.1);
+
+.banner {
+  background: rebeccapurple;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
 }
-  
+.frase {
+  position: relative; /* Ou absolute, dependendo do efeito desejado */
+  top: 30px; /* Distância do topo */
+  left: 1020px; /* Distância da esquerda */
+  font-size: 24px;
+  color: black;
+  margin: 20px;
+}
+.produtos {
+  padding: 20px;
+  text-align: center;
+  display: flex; /* Usa flexbox para os produtos */
+  flex-wrap: wrap; /* Permite que os produtos quebrem para a linha seguinte */
+  justify-content: center; /* Centraliza os produtos */
+}
+
+.produto {
+  background: whitesmoke;
+  color: black;
+  margin: 20px;
+  border: 2px solid rebeccapurple;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 300px; /* Faz com que os produtos ocupem no mínimo 300px */
+  max-width: 3000px; /* Limita a largura máxima dos produtos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.produto img {
+  max-width: 100%; /* Faz com que a imagem ocupe 100% da largura do contêiner */
+  height: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #1e0a3d;
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start; /* Alinha itens no início */
+  }
+
+  nav ul {
+      flex-direction: column; /* Muda a lista de navegação para coluna */
+      align-items: flex-start; /* Alinha itens à esquerda */
+  }
+
+  nav ul li {
+      margin: 5px 0; /* Espaçamento vertical entre os itens do menu */
+  }
+
   .banner {
-    background: rebeccapurple;
-    color: #fff;
-    padding: 30px 20px;
-    text-align: center;
-  }
-  
-  .produtos {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .produto {
-    display: inline-block;
-    background: #fff;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .produto img {
-    max-width: 450px;
-    height: auto;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 10px 0;
-    background: rebeccapurple;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    max-width:3000px;
+      padding: 20px 10px; /* Ajusta o padding para telas menores */
   }
 
-  
+  .produto {
+      flex: 1 1 100%; /* Faz com que os produtos ocupem a largura total em telas pequenas */
+      max-width: 100%; /* Remove a largura máxima em telas pequenas */
+  }
+}

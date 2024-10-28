@@ -3,93 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Master-contato</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contato - Web Master</title>
 </head>
 <body>
     <style>
-   body {
-         font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: whitesmoke;
-        }
-
-        header {
-            background: rgb(50, 2, 97);
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        nav a:hover {
-            color: rgb(140, 78, 202);
-            transform: scale(1.1);
-        }
-        
-        .banner {
-          background: rebeccapurple;
-          color: #fff;
-          padding: 30px 20px;
-          text-align: center;
-        }
-        main{
-           background-color: whitesmoke;
-           max-width: 3000px;
-           height: 3000px;
-        }
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: white
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
 }
+
+header {
+    background-color: #1e0a3d;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: rebeccapurple;
+  transform: scale(1.2);
+}
+
+.banner {
+    background-color: rebeccapurple;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.informacoes {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container {
+    background: #fff;
+    padding: 80px;
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    width: 200%;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    max-width: 3000px;
 }
 
 label {
     margin-bottom: 5px;
-    font-size: 15px;
-    color: #333;
+    font-size: 14px;
 }
 
-span {
-    color: red;
-}
-
-input {
-    margin-bottom: 20px;
+input, textarea {
+    margin-bottom: 15px;
     padding: 10px;
-    font-size: 15px;
-    border: 1px solid black;
+    font-size: 14px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 button {
     padding: 10px;
-    font-size: 16px;
-    background-color: rebeccapurple;
+    background-color: #8e44ad;
     color: white;
     border: none;
     border-radius: 5px;
@@ -97,24 +102,39 @@ button {
 }
 
 button:hover {
-    background-color: rgb(48, 23, 73);
+    background-color: #732d91;
 }
 
-.floating-image {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #1e0a3d;
+    color: #fff;
 }
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contato {
+        padding: 10px;
+    }
+}
+
     </style>
     <header>
-        <div class="logo">Minha Loja</div>
+        <div class="logo"><img src="logoo.png" alt=""></div>
         <nav>
             <ul>
-                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="inicio.html">Início</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
@@ -123,37 +143,40 @@ button:hover {
 
     <main>
         <section class="banner">
-            <h1>Contato</h1>
-
+            <h1>Entre em Contato</h1>
+            <p>Estamos aqui para ajudar você!</p>
         </section>
-        <div class="container">
-            <form>
-                <label for="nome">Nome<span>*</span>:</label>
-                <input type="text" id="nome" name="nome" required>
-    
-                <label for="email">E-mail<span>*</span>:</label>
-                <input type="email" id="email" name="email" required>
-    
-                <label for="telefone">Telefone<span>*</span>:</label>
-                <input type="tel" id="telefone" name="telefone" required>
-    
-                <label for="endereco">Endereço:</label>
-                <input type="text" id="endereco" name="endereco">
-    
-                <label for="cidade">Cidade<span>*</span>:</label>
-                <input type="text" id="cidade" name="cidade" required>
-    
-                <label for="estado">Estado<span>*</span>:</label>
-                <input type="text" id="estado" name="estado" required>
-    
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+
+        <section class="contato">
+            <div class="informacoes">
+                <h2>Informações de Contato</h2>
+                <p>Email: webmaster@gmail.com.br</p>
+                <p>Telefone: (99) 1234-5678</p>
+                <p>Endereço: Rua Exemplo, 123 - Cidade - Estado</p>
+            </div>
+
+            <div class="form-container">
+                <form>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 Minha Loja. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Nossa Empresa. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
-
-        
