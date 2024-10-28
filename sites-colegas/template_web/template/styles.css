@@ -64,13 +64,13 @@ nav a:hover {
   background: whitesmoke;
   color: black;
   margin: 20px;
-  border: 2px solid rebeccapurple;
+  /*border: 2px solid rebeccapurple;*/
   padding: 30px;
   border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
   flex: 1 1 300px; /* Faz com que os produtos ocupem no mínimo 300px */
   max-width: 3000px; /* Limita a largura máxima dos produtos */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .produto img {
