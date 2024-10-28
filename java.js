@@ -1,6 +1,5 @@
 const sideNav = document.querySelector(".side-menu")
 const hamburguer= document.querySelector(".hamburguer")
-const p= document.querySelector(".p")
 let carousel = document.querySelector('.carousel');
 let textos = ['Desenvolvimento Web', 'Design Responsivo', 'Soluções Personalizadas'];
 let i = 0;

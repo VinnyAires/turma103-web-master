@@ -14,23 +14,24 @@
 <body>
     <header>
         <a href="/index.html" class="logo"><img src="img-inicio/1.png" alt="Logo"></a>
-        <nav>
-            <ul class="navmenu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="tampletes/templates.html">Templates</a></li>
-                <li>
-                    <a href="#">Outros</a>
-                    <ul class="dropdown">
-                        <li><a href="servico.html">Serviços</a></li>
-                        <li><a href="orcamento.html">Orçamento</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="contato.html">Contatos</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <button class="hamburguer"></button>
     </header>
+    <nav class="side-menu">
+        <ul class="s-menu">
+            <li class="side-menu-item">
+                <a href="../servico.html">SERVIÇOS</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="contato.html">CONTATO</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="tampletes/templates.html">TAMPLATES</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="sobre.html">SOBRE</a>
+            </li>
+        </ul>
+    </nav>
 
     <section id="orcamento">
         <div class="centro-texto">
@@ -82,7 +83,7 @@
             </div>
             <label for="mensagem">Informações sobre o Projeto:</label>
             <textarea id="mensagem" name="mensagem" required></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit" class="enviar">Enviar</button>
         </form>
     </section>
 

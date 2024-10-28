@@ -15,32 +15,25 @@
 <body>
     <header>
         <a href="/index.html" class="logo"><img src="img-inicio/1.png" alt="Logo do Webmaster"></a>
-        <ul class="navmenu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="tampletes/templates.html">Templates</a></li>
-            <li>
-                <a href="#" aria-haspopup="true" aria-expanded="false">Outros</a>
-                <ul class="dropdown">
-                    <li><a href="servico.html">Serviços</a></li>
-                    <li><a href="orcamento.html">Orçamento</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contatos</a></li>
-                </ul>
-            </li>
-        </ul>
-        
-        <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+        <button class="hamburguer"></button>
+
     </header>
     <nav class="side-menu">
-        <ul class="s-menu">
-            <li class="side-menu-item">
-                <a href="../orcamento.html">PRODUTOS</a>
-            </li>
-            <li class="side-menu-item">
-                <a href="../servico.html">SERVIÇOS</a>
-            </li>
-        </ul>
-    </nav>
+            <ul class="s-menu">
+                <li class="side-menu-item">
+                    <a href="../orcamento.html">ORÇAMENTO</a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="../servico.html">SERVIÇOS</a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="tampletes/templates.html">TAMPLATES</a>
+                </li>
+                <li class="side-menu-item">
+                    <a href="sobre.html">SOBRE</a>
+                </li>
+            </ul>
+        </nav>
 
     <section id="contato">
         <div class="centro-texto">
@@ -57,7 +50,7 @@
             <input type="email" id="email" name="email" required>
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" required></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit" class="enviar">Enviar</button>
         </form>
     </section>
 
